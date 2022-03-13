@@ -5,15 +5,16 @@ metadata:
 spec:
   destination:
     name: ''
-    namespace: argocd-temp
+    namespace: nexus-dev
     server: 'https://kubernetes.default.svc'
   source:
-    path: ./
+    path: helm
     repoURL: 'git@github.com:mehmetalishaqiri/argocd-sample-app.git'
-    targetRevision: main
+    targetRevision: HEAD
     plugin:
       name: argocd-vault-plugin
   project: default
+
   # syncPolicy:
   #   automated:
   #     prune: true
