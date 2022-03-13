@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-sample-app
+spec:
+  destination:
+    name: ''
+    namespace: argocd-temp
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm/poc-2
+    repoURL: 'git@github.com:mehmetalishaqiri/argocd-sample-app.git'
+    targetRevision: main
+    plugin:
+      name: argocd-vault-plugin
+  project: default
+  # syncPolicy:
+  #   automated:
+  #     prune: true
+  #     selfHeal: true
