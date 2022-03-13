@@ -4,6 +4,9 @@
 
 replicaCount: 1
 
+nameOverride: web-app
+fullnameOverride: web-app
+
 image:
   repository: nginx
   pullPolicy: IfNotPresent
