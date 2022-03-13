@@ -11,8 +11,10 @@ spec:
     path: helm
     repoURL: 'git@github.com:mehmetalishaqiri/argocd-sample-app.git'
     targetRevision: HEAD
-    plugin:
-      name: argocd-vault-plugin
+    name: argocd-vault-plugin-helm
+    env:
+      - name: helm_args
+        value: -f values.yaml
   project: default
 
   # syncPolicy:
